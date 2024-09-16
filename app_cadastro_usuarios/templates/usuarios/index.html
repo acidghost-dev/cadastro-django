@@ -1,0 +1,20 @@
+{% extends 'usuarios/base.html' %}
+{% block conteudo %}
+<form action="{% url 'usuarios' %}" method="post">
+    {%csrf_token %}
+    <div style="text-align: center;" class="container">
+        <h1>Cadastro de usuários</h1>
+        <br>
+        <div class="form-floating mb-3">
+            <input name="nome" class="form-control" type="text" id="floatingInputName">
+            <label for="floatingInputName">Nome</label>
+        </div>
+        <div class="form-floating">
+            <input name="email" class="form-control" type="text" id="floatingInputEmail">
+            <label for="floatingInputEmail">E-mail</label>
+            <div class="text-end mt-3">
+                <button class="btn btn-primary">Enviar</button>
+            </div>
+        </div>
+</form>
+{% endblock %}
